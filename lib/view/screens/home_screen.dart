@@ -50,5 +50,6 @@ class _ScreenHomeState extends State<ScreenHome> {
     await prefs.setBool('uppercase', false);
     await prefs.setBool('number', false);
     await prefs.setBool('symbol', false);
+    await prefs.setInt('length', 8);
   }
 }

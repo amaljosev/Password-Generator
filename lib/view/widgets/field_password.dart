@@ -25,14 +25,7 @@ class PasswordField extends StatelessWidget {
         }
         if (state is TextCopiedState) {
           if (passwordController.text == '') return;
-          Clipboard.setData(ClipboardData(text: passwordController.text)).then(
-              (value) =>
-                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                    content: Text('Copied'),
-                    duration: Duration(seconds: 1),
-                    behavior: SnackBarBehavior.floating,
-                    padding: EdgeInsets.all(10),
-                  )));
+          Clipboard.setData(ClipboardData(text: passwordController.text));
         }
       },
       builder: (context, state) {
