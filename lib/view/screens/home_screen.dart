@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:passwordgenerator/controller/bloc/password_bloc.dart';
+import 'package:passwordgenerator/controller/functions/reset.dart';
 import 'package:passwordgenerator/view/widgets/field_password.dart';
 import 'package:passwordgenerator/view/widgets/header_widget.dart';
 import 'package:passwordgenerator/view/widgets/length_widget.dart';
 import 'package:passwordgenerator/view/widgets/settings.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 int value = 10;
 
@@ -42,14 +42,5 @@ class _ScreenHomeState extends State<ScreenHome> {
         ),
       ),
     );
-  }
-
-  Future<void> reset() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance(); 
-    await prefs.setBool('lowercase', true);
-    await prefs.setBool('uppercase', false);
-    await prefs.setBool('number', false);
-    await prefs.setBool('symbol', false);
-    await prefs.setInt('length', 8);
   }
 }
